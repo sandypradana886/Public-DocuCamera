@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Kebijakan Privasi aplikasi DocuCamera — data apa yang diakses, ke mana perginya, dan apa yang bisa Anda kendalikan.">
+<meta name="robots" content="index, follow">
+<title>Kebijakan Privasi DocuCamera</title>
+<style>
+  :root {
+    --bg: #F4F6F5;
+    --surface: #FFFFFF;
+    --ink: #172026;
+    --ink-muted: #57666B;
+    --ink-faint: #839094;
+    --accent: #0F6659;
+    --accent-strong: #0B4B41;
+    --accent-soft: #EAF3F1;
+    --line: #D8DFDD;
+    --warn-bg: #FBF3E3;
+    --warn-ink: #7A5B12;
+    --warn-line: #E9D6A4;
+    --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+    --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12181A;
+      --surface: #1A2225;
+      --ink: #E7EDEC;
+      --ink-muted: #9CACAB;
+      --ink-faint: #6C7A79;
+      --accent: #4FBFA8;
+      --accent-strong: #7BD4C0;
+      --accent-soft: #1E2E2C;
+      --line: #2B3639;
+      --warn-bg: #2A2515;
+      --warn-ink: #E3C878;
+      --warn-line: #4A3F1F;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #12181A;
+    --surface: #1A2225;
+    --ink: #E7EDEC;
+    --ink-muted: #9CACAB;
+    --ink-faint: #6C7A79;
+    --accent: #4FBFA8;
+    --accent-strong: #7BD4C0;
+    --accent-soft: #1E2E2C;
+    --line: #2B3639;
+    --warn-bg: #2A2515;
+    --warn-ink: #E3C878;
+    --warn-line: #4A3F1F;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent-strong); }
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  /* ---- Masthead ---- */
+  .masthead {
+    padding: 56px 0 32px;
+    border-bottom: 1px solid var(--line);
+  }
+  .masthead .mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    margin-bottom: 22px;
+  }
+  .masthead .mark .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: none;
+  }
+  .masthead h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.1;
+    margin: 0 0 14px;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  .masthead .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    font-size: 14px;
+    color: var(--ink-muted);
+  }
+  .masthead .meta strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- TOC ---- */
+  .toc {
+    margin: 40px 0 8px;
+    padding: 20px 22px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+  .toc h2 {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 12px;
+    font-weight: 600;
+  }
+  .toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    columns: 2;
+    column-gap: 24px;
+  }
+  .toc li { break-inside: avoid; margin-bottom: 8px; }
+  .toc a {
+    text-decoration: none;
+    font-size: 14.5px;
+    color: var(--ink);
+  }
+  .toc a:hover { color: var(--accent-strong); }
+  .toc a .n { color: var(--ink-faint); font-family: var(--font-mono); font-size: 13px; margin-right: 8px; }
+
+  /* ---- Sections ---- */
+  section.doc-section {
+    padding: 44px 0;
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: 24px;
+  }
+  section.doc-section:last-of-type { border-bottom: none; }
+
+  .doc-section .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    margin: 0 0 8px;
+  }
+  .doc-section h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .doc-section h3 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.02rem;
+    margin: 28px 0 8px;
+    color: var(--ink);
+  }
+  .doc-section p { margin: 0 0 14px; color: var(--ink); max-width: 68ch; }
+  .doc-section p.muted { color: var(--ink-muted); }
+  .doc-section ul, .doc-section ol.plain {
+    margin: 0 0 16px;
+    padding-left: 22px;
+  }
+  .doc-section li { margin-bottom: 8px; max-width: 66ch; }
+
+  .summary-box {
+    background: var(--accent-soft);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 20px 22px;
+    margin: 0 0 8px;
+  }
+  .summary-box p { margin: 0 0 10px; }
+  .summary-box p:last-child { margin-bottom: 0; }
+  .summary-box strong { color: var(--accent-strong); }
+
+  /* ---- Data grid (what we collect) ---- */
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin: 8px 0 22px;
+  }
+  .data-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .data-card .tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    background: var(--accent-soft);
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .data-card h4 { margin: 0 0 6px; font-size: 15px; }
+  .data-card p { margin: 0; font-size: 14px; color: var(--ink-muted); }
+
+  .not-collected {
+    background: var(--surface);
+    border: 1px dashed var(--line);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-top: 4px;
+  }
+  .not-collected h4 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: var(--ink-muted);
+    font-weight: 600;
+  }
+  .not-collected ul { margin: 0; padding-left: 18px; }
+  .not-collected li { font-size: 14px; color: var(--ink-muted); margin-bottom: 4px; }
+
+  /* ---- Third-party table ---- */
+  .table-wrap { overflow-x: auto; margin: 8px 0 22px; }
+  table.services {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  table.services th, table.services td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  table.services thead th {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    border-bottom: 1px solid var(--ink-faint);
+  }
+  table.services td.svc-name { font-weight: 600; white-space: nowrap; }
+  table.services td.svc-status {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .status-live { color: var(--accent-strong); }
+  .status-pending { color: var(--warn-ink); }
+
+  /* ---- Footer ---- */
+  footer.doc-footer {
+    padding-top: 40px;
+    color: var(--ink-faint);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  footer.doc-footer p { max-width: 66ch; margin: 0 0 10px; }
+
+  @media (max-width: 560px) {
+    .toc ol { columns: 1; }
+    .masthead { padding-top: 40px; }
+  }
+</style>
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="mark"><span class="dot"></span> DocuCamera</div>
+    <h1>Kebijakan Privasi</h1>
+    <div class="meta">
+      <span>Berlaku sejak: <strong>10 September 2026</strong></span>
+      <span>Versi: <strong>1.0</strong></span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Daftar isi">
+    <h2>Daftar Isi</h2>
+    <ol>
+      <li><a href="#ringkasan"><span class="n">1</span>Ringkasan</a></li>
+      <li><a href="#data-dikumpulkan"><span class="n">2</span>Data yang Dikumpulkan</a></li>
+      <li><a href="#penggunaan"><span class="n">3</span>Bagaimana Data Digunakan</a></li>
+      <li><a href="#penyimpanan"><span class="n">4</span>Penyimpanan &amp; Berbagi Data</a></li>
+      <li><a href="#pihak-ketiga"><span class="n">5</span>Layanan Pihak Ketiga</a></li>
+      <li><a href="#keamanan"><span class="n">6</span>Keamanan Data</a></li>
+      <li><a href="#hak-pengguna"><span class="n">7</span>Hak Pengguna</a></li>
+      <li><a href="#anak"><span class="n">8</span>Kebijakan untuk Anak-anak</a></li>
+      <li><a href="#perubahan"><span class="n">9</span>Perubahan Kebijakan Ini</a></li>
+      <li><a href="#kontak"><span class="n">10</span>Kontak</a></li>
+    </ol>
+  </nav>
+
+  <section class="doc-section" id="ringkasan">
+    <p class="eyebrow">01 — Inti Singkat</p>
+    <h2>Ringkasan</h2>
+    <div class="summary-box">
+      <p><strong>DocuCamera adalah aplikasi yang bekerja secara lokal di perangkat Anda.</strong> Semua foto, video, dan data proyek disimpan di penyimpanan internal perangkat Anda sendiri — DocuCamera tidak mengoperasikan server untuk menyimpan atau melihat dokumentasi Anda.</p>
+      <p>Aplikasi meminta izin <strong>Kamera</strong> dan <strong>Lokasi</strong> supaya Anda bisa mengambil foto/video ber-stempel waktu dan koordinat GPS. Data ini tidak dikirim ke mana pun kecuali atas tindakan Anda sendiri — lewat tombol Bagikan, lewat Export, atau lewat fitur <strong>Cadangkan ke Google Drive</strong>.</p>
+      <p>Cadangan Drive bersifat opsional dan mati secara bawaan. Fitur itu baru berjalan setelah Anda masuk dengan akun Google Anda sendiri, dan berkasnya mendarat di Drive milik Anda — bukan di server kami, karena kami memang tidak punya. Rinciannya di bagian 4 dan 5.</p>
+      <p>Layanan pihak ketiga yang dipakai — Google AdMob (iklan), Google Play Billing (pembelian Premium), Google Drive, dan Google Play Services — masing-masing punya kebijakan privasi sendiri, dirinci di bagian 5.</p>
+    </div>
+  </section>
+
+  <section class="doc-section" id="data-dikumpulkan">
+    <p class="eyebrow">02 — Cakupan</p>
+    <h2>Data yang Dikumpulkan</h2>
+    <p>DocuCamera mengakses jenis data berikut, langsung dari perangkat Anda, untuk menjalankan fitur intinya:</p>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <span class="tag">Kamera</span>
+        <h4>Foto &amp; Video</h4>
+        <p>Diambil lewat kamera perangkat saat Anda menekan tombol jepret. Disimpan sebagai file mentah di penyimpanan privat aplikasi.</p>
+      </div>
+      <div class="data-card">
+        <span class="tag">Lokasi</span>
+        <h4>Koordinat GPS</h4>
+        <p>Lintang/bujur saat pengambilan foto, dibaca lewat Google Play Services Location, dipakai untuk stempel lokasi pada overlay.</p>
+      </div>
+      <div class="data-card">
+        <span class="tag">Input Manual</span>
+        <h4>Catatan &amp; Nama</h4>
+        <p>Teks catatan, nama proyek, dan nama pengguna (mode Presensi) — hanya yang Anda ketik sendiri di dalam aplikasi.</p>
+      </div>
+      <div class="data-card">
+        <span class="tag">Akun Google</span>
+        <h4>Alamat Email</h4>
+        <p>Hanya jika Anda memakai Cadangkan ke Drive. Google Sign-In memberi aplikasi alamat email dan nama akun yang Anda pilih, dipakai semata untuk menampilkan akun mana yang sedang tersambung dan untuk mengunggah ke Drive Anda.</p>
+      </div>
+      <div class="data-card">
+        <span class="tag">Penyimpanan</span>
+        <h4>Metadata Berkas</h4>
+        <p>Ukuran, nama, dan hash checksum SHA-256 tiap foto — dipakai untuk menandai foto yang terverifikasi/tidak diubah.</p>
+      </div>
+    </div>
+
+    <div class="not-collected">
+      <h4>Yang TIDAK dikumpulkan DocuCamera</h4>
+      <ul>
+        <li>Tidak ada akun DocuCamera — kami tidak membuatkan Anda akun, tidak meminta kata sandi, dan tidak meminta nomor telepon. Satu-satunya login yang ada adalah Google Sign-In, itu pun hanya kalau Anda menyalakan Cadangkan ke Drive, dan bisa diputus kapan saja.</li>
+        <li>Tidak ada server DocuCamera. Kami tidak bisa melihat foto, lokasi, atau catatan Anda — tidak ada tempat bagi kami untuk melihatnya.</li>
+        <li>Tidak mengakses kontak, galeri foto lain, mikrofon (kecuali saat merekam video mode Video), atau riwayat aplikasi lain.</li>
+        <li>Tidak melacak lokasi di latar belakang — GPS hanya dibaca sesaat saat tombol jepret ditekan.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="doc-section" id="penggunaan">
+    <p class="eyebrow">03 — Tujuan</p>
+    <h2>Bagaimana Data Digunakan</h2>
+    <ul>
+      <li><strong>Stempel waktu &amp; lokasi</strong> — tanggal, jam, dan koordinat GPS dirender sebagai overlay di atas foto/video, sesuai template yang Anda pilih.</li>
+      <li><strong>Verifikasi keaslian</strong> — checksum SHA-256 dari tiap foto disimpan untuk mendeteksi apakah file mentah diubah di luar aplikasi setelah diambil.</li>
+      <li><strong>Pembuatan laporan</strong> — saat Anda memilih export PDF/Excel/ZIP, data foto & metadata proyek disusun menjadi berkas laporan yang tersimpan lokal di perangkat.</li>
+      <li><strong>Berbagi atas permintaan Anda</strong> — saat menekan tombol Bagikan, foto (dengan overlay) dikirim ke aplikasi lain yang Anda pilih lewat menu berbagi bawaan Android.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section" id="penyimpanan">
+    <p class="eyebrow">04 — Lokasi Data</p>
+    <h2>Penyimpanan &amp; Berbagi Data</h2>
+    <p>Semua foto, video, proyek, dan pengaturan disimpan di dua tempat, keduanya privat untuk aplikasi ini dan tidak bisa diakses aplikasi lain:</p>
+    <ul>
+      <li><strong>Berkas mentah</strong> (foto/video asli, thumbnail, hasil export PDF/Excel/ZIP) — di penyimpanan internal aplikasi.</li>
+      <li><strong>Basis data terstruktur</strong> (nama proyek, metadata foto, template, checklist) — di database SQLite lokal (Room).</li>
+    </ul>
+    <p>Data ini <strong>meninggalkan perangkat hanya jika Anda secara aktif</strong>:</p>
+    <ol class="plain">
+      <li>Menekan tombol <strong>Bagikan</strong> dan memilih aplikasi tujuan (WhatsApp, Email, dll).</li>
+      <li>Membuka hasil export dan membagikannya lewat tombol "Bagikan" di layar Export.</li>
+      <li>Melakukan pembelian Premium (data pembelian diproses sepenuhnya oleh Google Play Billing — lihat bagian 5).</li>
+      <li>Menyalakan <strong>Cadangkan ke Google Drive</strong> — dijelaskan tersendiri di bawah, karena inilah satu-satunya jalur yang bisa berjalan berulang tanpa Anda menekan apa pun lagi.</li>
+    </ol>
+
+    <div class="not-collected">
+      <h4>Cadangkan ke Google Drive — apa yang naik, ke mana</h4>
+      <ul>
+        <li><strong>Mati secara bawaan.</strong> Tidak ada yang naik ke Drive sampai Anda masuk dengan akun Google dan menekan tombolnya sendiri.</li>
+        <li><strong>Cadangan proyek</strong> mengunggah satu berkas ZIP berisi seluruh foto dan data proyek yang Anda pilih, ke folder <strong>"DocuCamera Backups"</strong> di My Drive Anda.</li>
+        <li><strong>Sinkron checklist</strong> (sakelar terpisah, juga mati secara bawaan) mengunggah tabel hasil pemeriksaan dalam bentuk CSV beserta foto-fotonya. Setelah dinyalakan, ini berjalan otomatis tiap kali satu pemeriksaan dikirim — sengaja kami sebutkan, karena itu satu-satunya hal di aplikasi ini yang mengirim data tanpa ditekan lebih dulu.</li>
+        <li><strong>Aplikasi hanya melihat berkasnya sendiri.</strong> Izin yang diminta adalah <span style="font-family:var(--font-mono);font-size:13px;">drive.file</span>, bukan akses Drive penuh — berkas Drive Anda yang lain tidak bisa dibaca DocuCamera, sekalipun kami menginginkannya.</li>
+        <li><strong>Isi Drive Anda milik Anda.</strong> Setelah berkas naik, ia tunduk pada kebijakan privasi Google dan pengaturan berbagi akun Anda sendiri; menghapusnya dilakukan dari Drive, bukan dari sini.</li>
+      </ul>
+    </div>
+
+    <p class="muted">Menghapus aplikasi (uninstall) menghapus seluruh data di atas secara permanen dari perangkat — tetapi tidak menghapus cadangan yang sudah terlanjur ada di Google Drive Anda.</p>
+  </section>
+
+  <section class="doc-section" id="pihak-ketiga">
+    <p class="eyebrow">05 — Integrasi</p>
+    <h2>Layanan Pihak Ketiga</h2>
+    <p>DocuCamera memakai layanan Google berikut. Yang ditandai <strong>opsional</strong> hanya berjalan kalau Anda menyalakannya sendiri; sisanya aktif sejak aplikasi dibuka. Masing-masing layanan tunduk pada kebijakan privasi Google.</p>
+
+    <div class="table-wrap">
+      <table class="services">
+        <thead>
+          <tr><th>Layanan</th><th>Dipakai untuk</th><th>Data yang mengalir</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="svc-name">Google AdMob</td>
+            <td>Iklan banner, interstitial, dan rewarded (tier gratis)</td>
+            <td>ID iklan perangkat, info perangkat umum — dikelola kebijakan privasi Google</td>
+            <td class="svc-status status-live">Aktif</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Google Play Billing</td>
+            <td>Pembelian "Unlock Premium" satu kali</td>
+            <td>Diproses penuh oleh Google Play — DocuCamera hanya menerima status berhasil/tidak</td>
+            <td class="svc-status status-live">Aktif</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Google Play Services Location</td>
+            <td>Membaca koordinat GPS saat pengambilan foto</td>
+            <td>Lintang/bujur — diproses di perangkat, disimpan lokal</td>
+            <td class="svc-status status-live">Aktif</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Google Play Core (In-App Review)</td>
+            <td>Menampilkan dialog ulasan bawaan Play Store setelah export pertama berhasil</td>
+            <td>Tidak ada data pribadi yang dikirim ke DocuCamera</td>
+            <td class="svc-status status-live">Aktif</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Google Sign-In</td>
+            <td>Masuk ke akun Google Anda, khusus untuk fitur Cadangkan ke Drive</td>
+            <td>Alamat email dan nama akun yang Anda pilih — tidak dikirim ke mana pun selain tetap di perangkat</td>
+            <td class="svc-status status-live">Aktif (opsional)</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Google Drive</td>
+            <td>Menyimpan cadangan ZIP proyek dan hasil sinkron checklist</td>
+            <td>Foto, video, dan data proyek yang Anda cadangkan — diunggah ke Drive milik Anda sendiri dengan izin terbatas <span style="font-family:var(--font-mono);font-size:12px;">drive.file</span></td>
+            <td class="svc-status status-live">Aktif (opsional)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted">DocuCamera tidak memakai Firebase Analytics, Crashlytics, atau layanan analitik pihak ketiga lain. Kalau suatu hari salah satunya dipasang, kebijakan ini diperbarui lebih dulu — bukan sesudahnya.</p>
+  </section>
+
+  <section class="doc-section" id="keamanan">
+    <p class="eyebrow">06 — Perlindungan</p>
+    <h2>Keamanan Data</h2>
+    <p>Karena data tersimpan di penyimpanan privat aplikasi (bukan penyimpanan bersama), sistem operasi Android secara bawaan mencegah aplikasi lain mengaksesnya tanpa izin eksplisit dari Anda. Saat berbagi foto ke aplikasi lain, DocuCamera memakai mekanisme <span style="font-family:var(--font-mono);font-size:13px;">FileProvider</span> resmi Android sehingga hanya berkas yang Anda pilih yang diberi akses sementara.</p>
+  </section>
+
+  <section class="doc-section" id="hak-pengguna">
+    <p class="eyebrow">07 — Kendali Anda</p>
+    <h2>Hak Pengguna</h2>
+    <ul>
+      <li><strong>Hapus per item</strong> — foto, project, dan template bisa dihapus langsung dari dalam aplikasi.</li>
+      <li><strong>Hapus semua</strong> — uninstall aplikasi menghapus seluruh data secara permanen dari perangkat.</li>
+      <li><strong>Pulihkan pembelian</strong> — tombol "Pulihkan Pembelian" di layar Premium mengambil ulang status pembelian dari akun Google Play Anda.</li>
+      <li><strong>Putuskan akun Google</strong> — tombol Keluar di layar "Cadangkan ke Drive" memutus sambungan akun dan menghentikan unggahan berikutnya. Aksesnya juga bisa dicabut sepenuhnya lewat <span style="font-family:var(--font-mono);font-size:13px;">myaccount.google.com/permissions</span>.</li>
+      <li><strong>Hapus cadangan di Drive</strong> — berkas di folder "DocuCamera Backups" adalah milik Anda dan dihapus dari Google Drive seperti berkas lain. Uninstall aplikasi tidak menghapusnya, dan itu memang disengaja: cadangan yang ikut lenyap saat aplikasi dicopot bukan cadangan.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section" id="anak">
+    <p class="eyebrow">08 — Batasan Usia</p>
+    <h2>Kebijakan untuk Anak-anak</h2>
+    <p>DocuCamera ditujukan untuk pekerja lapangan, ASN, guru, dan freelancer dewasa, bukan untuk anak-anak. Aplikasi ini tidak dirancang atau dipasarkan untuk pengguna di bawah usia yang ditetapkan hukum yang berlaku di wilayah Anda.</p>
+  </section>
+
+  <section class="doc-section" id="perubahan">
+    <p class="eyebrow">09 — Pembaruan</p>
+    <h2>Perubahan Kebijakan Ini</h2>
+    <p>Kebijakan ini dapat diperbarui seiring bertambahnya fitur DocuCamera. Tanggal "Berlaku sejak" di bagian atas diperbarui setiap kali ada perubahan berarti, dan perubahan yang menyangkut data baru — layanan pihak ketiga baru, jenis data baru, atau jalur pengiriman baru — dituliskan di sini sebelum fiturnya dirilis, bukan sesudahnya.</p>
+  </section>
+
+  <section class="doc-section" id="kontak">
+    <p class="eyebrow">10 — Hubungi Kami</p>
+    <h2>Kontak</h2>
+    <p>Pertanyaan tentang kebijakan privasi ini bisa disampaikan ke:</p>
+    <p style="font-family:var(--font-mono); font-size:15px;">sandy.pradana886@gmail.com</p>
+  </section>
+
+  <footer class="doc-footer">
+    <p>Kebijakan ini menjelaskan perilaku DocuCamera sebagaimana benar-benar diterapkan di dalam aplikasi. Pertanyaan atau keberatan atas isinya bisa disampaikan ke alamat pada bagian 10.</p>
+  </footer>
+
+</div>
+</body>
+</html>
